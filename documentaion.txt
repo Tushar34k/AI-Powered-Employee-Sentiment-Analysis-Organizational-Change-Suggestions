@@ -1,0 +1,48 @@
+
+   // **************   AI-Powered Employee Performance & Role Optimization System  ***********************   //
+
+
+Description:
+A system that tracks employee performance using various parameters (task completion, feedback, etc.) and uses AI to suggest role changes, promotions, or skill improvements.
+
+//Features:
+
+Employee performance tracking
+AI-based role recommendation
+Promotion and skill improvement suggestions
+Integration with HR & Admin dashboards
+
+
+//AI Integration:
+
+Machine learning model to analyze employee performance
+AI chatbot to assist HR in decision-making
+
+
+
+//Dependency	Purpose
+spring-boot-starter-web	Creates REST APIs
+spring-boot-starter-data-jpa	Manages database operations
+mysql-connector-java	Connects Spring Boot to MySQL
+lombok	Reduces boilerplate code (Getters, Setters, Constructors)
+spring-boot-starter-validation	Validates API inputs
+spring-boot-starter-security	Adds authentication (optional)
+jackson-databind	Converts Java objects to JSON
+spring-boot-starter-test	Enables unit testing
+spring-boot-starter-webflux	Supports asynchronous API calls (for AI API integration)
+spring-cloud-starter-openfeign	Calls external APIs (AI API)
+h2database	Provides in-memory DB for testing
+gson	Converts objects to JSON
+
+//  *************************** Entity Relestionship   *****************************//
+// Employee → Feedback	OneToMany
+// Feedback → Employee	ManyToOne
+// Feedback → Sentiment	OneToOne
+// Org Change → Employees	ManyToMany
+
+
+Employee (1)  ----> (M) Feedback  (1)  ----> (1) SentimentAnalysis
+    |                                 |
+    |                                 |
+   (M)                             (M)
+ OrganizationalChange  ----> (M) Employees
