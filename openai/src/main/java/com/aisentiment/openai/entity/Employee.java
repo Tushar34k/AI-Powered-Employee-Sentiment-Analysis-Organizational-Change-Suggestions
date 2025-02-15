@@ -3,6 +3,7 @@ package com.aisentiment.openai.entity;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -26,6 +27,8 @@ public class Employee {
     private String name;
     private String email;
     private String department;
+
+    
 
     @OneToMany(mappedBy = "employee",cascade = CascadeType.ALL)
     private List<Feedback> feedbacks;
