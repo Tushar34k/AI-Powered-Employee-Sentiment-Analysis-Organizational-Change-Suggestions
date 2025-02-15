@@ -28,7 +28,7 @@ public class FeedbackService {
         Feedback fd = new Feedback();
         fd.setEmployee(emp);
         fd.setFeedbackText(fedbackRequest.getText());
-
+                    feedbackRepo.save(fd);
         return fd;
     }
 

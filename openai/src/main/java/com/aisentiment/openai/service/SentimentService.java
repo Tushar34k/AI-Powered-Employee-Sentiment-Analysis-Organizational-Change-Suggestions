@@ -34,7 +34,7 @@ public class SentimentService {
             SentimentAnalysis sentimentAnalysis = new SentimentAnalysis();
             sentimentAnalysis.setFeedback(feedback);
             sentimentAnalysis.setSentimentScore(sentimentResponse.getConfidenceScore());
-               sentimentAnalysis.setSentimentType(sentimentResponse.getSentimentType());
+            sentimentAnalysis.setSentimentType(sentimentResponse.getSentimentType());
 
             SentimentAnalysis savedAnalysis = sentimentAnalysisRepository.save(sentimentAnalysis);
             logger.info("Sentiment analysis saved successfully for feedback ID: {}", feedback.getId());
