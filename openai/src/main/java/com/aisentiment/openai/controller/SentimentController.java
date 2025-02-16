@@ -1,6 +1,7 @@
 package com.aisentiment.openai.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,10 +19,10 @@ public class SentimentController {
     @Autowired
     private SentimentService sentimentService;
 
-    @PostMapping("/save")
-    public SentimentAnalysis createSentimentAnalysis(@RequestBody Feedback feedback)
+    @PostMapping("/{id}")
+    public SentimentAnalysis createSentimentAnalysis(@PathVariable Long id)
     {
-                   return  sentimentService.analyzeFeedback(feedback);
+                   return  sentimentService.analyzeFeedback(id);
     }
 
 
